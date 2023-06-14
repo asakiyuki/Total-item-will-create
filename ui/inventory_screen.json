@@ -1,0 +1,1870 @@
+{
+    // Tùy chỉnh chữ ở đây :v (Đừng dùng alpha, làm ơn đấy!)
+    "asaLabel": {
+        "type": "label",
+        "color": [
+            0.3,
+            0.3,
+            0.3
+        ]
+    },
+    "recipe_inventory_screen_content": {
+        "modifications": [
+            {
+                "array_name": "controls",
+                "operation": "insert_front",
+                "value": [
+                    // Bắt buộc phải có 2 cái element ở dưới nếu không nó sẽ không hoạt động
+                    // Nếu bạn paste code ở dưới vào tệp khác thì hãy viết thêm cả namespace vào
+                    {
+                        "required@outputCount": {}
+                    },
+                    {
+                        "required_2@inputCount": {}
+                    }
+                ]
+            }
+        ]
+    },
+    // Chỉ là add tính tổng vào thôi
+    "survival_panel_top_half": {
+        "modifications": [
+            {
+                "array_name": "controls",
+                "operation": "insert_front",
+                "value": [
+                    {
+                        "itemCount": {
+                            "type": "stack_panel",
+                            "size": [
+                                "100%c",
+                                "100%cm"
+                            ],
+                            "anchor_from": "right_middle",
+                            "anchor_to": "right_middle",
+                            "offset": [
+                                -6,
+                                10
+                            ],
+                            "layer": 12,
+                            "orientation": "horizontal",
+                            "bindings": [
+                                {
+                                    "binding_type": "view",
+                                    "source_control_name": "item_output_count",
+                                    "source_property_name": "(not #isEmpty)",
+                                    "target_property_name": "#visible"
+                                }
+                            ],
+                            "controls": [
+                                {
+                                    "x@asaLabel": {
+                                        "text": "x"
+                                    }
+                                },
+                                {
+                                    "totalCanbeCraftingCounter@totalCanbeCraftingCounter": {}
+                                }
+                            ]
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    "crafting_panel_top_half": {
+        "modifications": [
+            {
+                "array_name": "controls",
+                "operation": "insert_front",
+                "value": [
+                    {
+                        "itemCount": {
+                            "type": "stack_panel",
+                            "size": [
+                                "100%c",
+                                "100%cm"
+                            ],
+                            "anchor_from": "right_middle",
+                            "anchor_to": "right_middle",
+                            "offset": [
+                                -26,
+                                20
+                            ],
+                            "layer": 12,
+                            "orientation": "horizontal",
+                            "bindings": [
+                                {
+                                    "binding_type": "view",
+                                    "source_control_name": "item_output_count",
+                                    "source_property_name": "(not #isEmpty)",
+                                    "target_property_name": "#visible"
+                                }
+                            ],
+                            "controls": [
+                                {
+                                    "x@asaLabel": {
+                                        "text": "x"
+                                    }
+                                },
+                                {
+                                    "totalCanbeCraftingCounter@totalCanbeCraftingCounter": {}
+                                }
+                            ]
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    //Copy những thứ có ở dưới và paste vào code của bạn (Đề xuất là ở file khác hoặc dòng cuối của code bạn)
+    "totalCanbeCraftingCounter": {
+        "type": "panel",
+        "size": [
+            "100%cm",
+            "100%cm"
+        ],
+        "controls": [
+            {
+                "0@itemCountSlot": {
+                    "$crafting_slot_name": "crafting_input_0",
+                    "bindings": [
+                        {
+                            "binding_type": "view",
+                            "source_control_name": "crafting_input_0",
+                            "source_property_name": "#inputCount",
+                            "target_property_name": "#slot_0"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_control_name": "crafting_input_1",
+                            "source_property_name": "#inputCount",
+                            "target_property_name": "#slot_1"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_control_name": "crafting_input_2",
+                            "source_property_name": "#inputCount",
+                            "target_property_name": "#slot_2"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_control_name": "crafting_input_3",
+                            "source_property_name": "#inputCount",
+                            "target_property_name": "#slot_3"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_control_name": "crafting_input_4",
+                            "source_property_name": "#inputCount",
+                            "target_property_name": "#slot_4"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_control_name": "crafting_input_5",
+                            "source_property_name": "#inputCount",
+                            "target_property_name": "#slot_5"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_control_name": "crafting_input_6",
+                            "source_property_name": "#inputCount",
+                            "target_property_name": "#slot_6"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_control_name": "crafting_input_7",
+                            "source_property_name": "#inputCount",
+                            "target_property_name": "#slot_7"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_control_name": "crafting_input_8",
+                            "source_property_name": "#inputCount",
+                            "target_property_name": "#slot_8"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_control_name": "crafting_input_0",
+                            "source_property_name": "#isEmpty",
+                            "target_property_name": "#slot_empty_0"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_control_name": "crafting_input_1",
+                            "source_property_name": "#isEmpty",
+                            "target_property_name": "#slot_empty_1"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_control_name": "crafting_input_2",
+                            "source_property_name": "#isEmpty",
+                            "target_property_name": "#slot_empty_2"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_control_name": "crafting_input_3",
+                            "source_property_name": "#isEmpty",
+                            "target_property_name": "#slot_empty_3"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_control_name": "crafting_input_4",
+                            "source_property_name": "#isEmpty",
+                            "target_property_name": "#slot_empty_4"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_control_name": "crafting_input_5",
+                            "source_property_name": "#isEmpty",
+                            "target_property_name": "#slot_empty_5"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_control_name": "crafting_input_6",
+                            "source_property_name": "#isEmpty",
+                            "target_property_name": "#slot_empty_6"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_control_name": "crafting_input_7",
+                            "source_property_name": "#isEmpty",
+                            "target_property_name": "#slot_empty_7"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_control_name": "crafting_input_8",
+                            "source_property_name": "#isEmpty",
+                            "target_property_name": "#slot_empty_8"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_property_name": "(((#slot_0 < #slot_1) or (#slot_0 = #slot_1)) or #slot_empty_1)",
+                            "target_property_name": "#0"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_property_name": "(((#slot_0 < #slot_2) or (#slot_0 = #slot_2)) or #slot_empty_2)",
+                            "target_property_name": "#1"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_property_name": "(((#slot_0 < #slot_3) or (#slot_0 = #slot_3)) or #slot_empty_3)",
+                            "target_property_name": "#2"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_property_name": "(((#slot_0 < #slot_4) or (#slot_0 = #slot_4)) or #slot_empty_4)",
+                            "target_property_name": "#3"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_property_name": "(((#slot_0 < #slot_5) or (#slot_0 = #slot_5)) or #slot_empty_5)",
+                            "target_property_name": "#4"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_property_name": "(((#slot_0 < #slot_6) or (#slot_0 = #slot_6)) or #slot_empty_6)",
+                            "target_property_name": "#5"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_property_name": "(((#slot_0 < #slot_7) or (#slot_0 = #slot_7)) or #slot_empty_7)",
+                            "target_property_name": "#6"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_property_name": "(((#slot_0 < #slot_8) or (#slot_0 = #slot_8)) or #slot_empty_8)",
+                            "target_property_name": "#7"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_property_name": "(#0 and #1 and #2 and #3 and #4 and #5 and #6 and #7)",
+                            "target_property_name": "#visible"
+                        }
+                    ]
+                }
+            },
+            {
+                "1@itemCountSlot": {
+                    "$crafting_slot_name": "crafting_input_1",
+                    "bindings": [
+                        {
+                            "binding_type": "view",
+                            "source_control_name": "crafting_input_0",
+                            "source_property_name": "#inputCount",
+                            "target_property_name": "#slot_0"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_control_name": "crafting_input_1",
+                            "source_property_name": "#inputCount",
+                            "target_property_name": "#slot_1"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_control_name": "crafting_input_2",
+                            "source_property_name": "#inputCount",
+                            "target_property_name": "#slot_2"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_control_name": "crafting_input_3",
+                            "source_property_name": "#inputCount",
+                            "target_property_name": "#slot_3"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_control_name": "crafting_input_4",
+                            "source_property_name": "#inputCount",
+                            "target_property_name": "#slot_4"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_control_name": "crafting_input_5",
+                            "source_property_name": "#inputCount",
+                            "target_property_name": "#slot_5"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_control_name": "crafting_input_6",
+                            "source_property_name": "#inputCount",
+                            "target_property_name": "#slot_6"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_control_name": "crafting_input_7",
+                            "source_property_name": "#inputCount",
+                            "target_property_name": "#slot_7"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_control_name": "crafting_input_8",
+                            "source_property_name": "#inputCount",
+                            "target_property_name": "#slot_8"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_control_name": "crafting_input_0",
+                            "source_property_name": "#isEmpty",
+                            "target_property_name": "#slot_empty_0"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_control_name": "crafting_input_1",
+                            "source_property_name": "#isEmpty",
+                            "target_property_name": "#slot_empty_1"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_control_name": "crafting_input_2",
+                            "source_property_name": "#isEmpty",
+                            "target_property_name": "#slot_empty_2"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_control_name": "crafting_input_3",
+                            "source_property_name": "#isEmpty",
+                            "target_property_name": "#slot_empty_3"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_control_name": "crafting_input_4",
+                            "source_property_name": "#isEmpty",
+                            "target_property_name": "#slot_empty_4"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_control_name": "crafting_input_5",
+                            "source_property_name": "#isEmpty",
+                            "target_property_name": "#slot_empty_5"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_control_name": "crafting_input_6",
+                            "source_property_name": "#isEmpty",
+                            "target_property_name": "#slot_empty_6"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_control_name": "crafting_input_7",
+                            "source_property_name": "#isEmpty",
+                            "target_property_name": "#slot_empty_7"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_control_name": "crafting_input_8",
+                            "source_property_name": "#isEmpty",
+                            "target_property_name": "#slot_empty_8"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_property_name": "(((#slot_1 < #slot_0) or (#slot_1 = #slot_0)) or #slot_empty_0)",
+                            "target_property_name": "#1"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_property_name": "(((#slot_1 < #slot_2) or (#slot_1 = #slot_2)) or #slot_empty_2)",
+                            "target_property_name": "#2"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_property_name": "(((#slot_1 < #slot_3) or (#slot_1 = #slot_3)) or #slot_empty_3)",
+                            "target_property_name": "#3"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_property_name": "(((#slot_1 < #slot_4) or (#slot_1 = #slot_4)) or #slot_empty_4)",
+                            "target_property_name": "#4"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_property_name": "(((#slot_1 < #slot_5) or (#slot_1 = #slot_5)) or #slot_empty_5)",
+                            "target_property_name": "#5"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_property_name": "(((#slot_1 < #slot_6) or (#slot_1 = #slot_6)) or #slot_empty_6)",
+                            "target_property_name": "#6"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_property_name": "(((#slot_1 < #slot_7) or (#slot_1 = #slot_7)) or #slot_empty_7)",
+                            "target_property_name": "#7"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_property_name": "(((#slot_1 < #slot_8) or (#slot_1 = #slot_8)) or #slot_empty_8)",
+                            "target_property_name": "#8"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_property_name": "(#1 and #2 and #3 and #4 and #5 and #6 and #7 and #8)",
+                            "target_property_name": "#visible"
+                        }
+                    ]
+                }
+            },
+            {
+                "2@itemCountSlot": {
+                    "$crafting_slot_name": "crafting_input_2",
+                    "bindings": [
+                        {
+                            "binding_type": "view",
+                            "source_control_name": "crafting_input_0",
+                            "source_property_name": "#inputCount",
+                            "target_property_name": "#slot_0"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_control_name": "crafting_input_1",
+                            "source_property_name": "#inputCount",
+                            "target_property_name": "#slot_1"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_control_name": "crafting_input_2",
+                            "source_property_name": "#inputCount",
+                            "target_property_name": "#slot_2"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_control_name": "crafting_input_3",
+                            "source_property_name": "#inputCount",
+                            "target_property_name": "#slot_3"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_control_name": "crafting_input_4",
+                            "source_property_name": "#inputCount",
+                            "target_property_name": "#slot_4"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_control_name": "crafting_input_5",
+                            "source_property_name": "#inputCount",
+                            "target_property_name": "#slot_5"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_control_name": "crafting_input_6",
+                            "source_property_name": "#inputCount",
+                            "target_property_name": "#slot_6"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_control_name": "crafting_input_7",
+                            "source_property_name": "#inputCount",
+                            "target_property_name": "#slot_7"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_control_name": "crafting_input_8",
+                            "source_property_name": "#inputCount",
+                            "target_property_name": "#slot_8"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_control_name": "crafting_input_0",
+                            "source_property_name": "#isEmpty",
+                            "target_property_name": "#slot_empty_0"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_control_name": "crafting_input_1",
+                            "source_property_name": "#isEmpty",
+                            "target_property_name": "#slot_empty_1"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_control_name": "crafting_input_2",
+                            "source_property_name": "#isEmpty",
+                            "target_property_name": "#slot_empty_2"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_control_name": "crafting_input_3",
+                            "source_property_name": "#isEmpty",
+                            "target_property_name": "#slot_empty_3"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_control_name": "crafting_input_4",
+                            "source_property_name": "#isEmpty",
+                            "target_property_name": "#slot_empty_4"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_control_name": "crafting_input_5",
+                            "source_property_name": "#isEmpty",
+                            "target_property_name": "#slot_empty_5"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_control_name": "crafting_input_6",
+                            "source_property_name": "#isEmpty",
+                            "target_property_name": "#slot_empty_6"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_control_name": "crafting_input_7",
+                            "source_property_name": "#isEmpty",
+                            "target_property_name": "#slot_empty_7"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_control_name": "crafting_input_8",
+                            "source_property_name": "#isEmpty",
+                            "target_property_name": "#slot_empty_8"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_property_name": "(((#slot_2 < #slot_0) or (#slot_2 = #slot_0)) or #slot_empty_0)",
+                            "target_property_name": "#1"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_property_name": "(((#slot_2 < #slot_1) or (#slot_2 = #slot_1)) or #slot_empty_1)",
+                            "target_property_name": "#2"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_property_name": "(((#slot_2 < #slot_3) or (#slot_2 = #slot_3)) or #slot_empty_3)",
+                            "target_property_name": "#3"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_property_name": "(((#slot_2 < #slot_4) or (#slot_2 = #slot_4)) or #slot_empty_4)",
+                            "target_property_name": "#4"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_property_name": "(((#slot_2 < #slot_5) or (#slot_2 = #slot_5)) or #slot_empty_5)",
+                            "target_property_name": "#5"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_property_name": "(((#slot_2 < #slot_6) or (#slot_2 = #slot_6)) or #slot_empty_6)",
+                            "target_property_name": "#6"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_property_name": "(((#slot_2 < #slot_7) or (#slot_2 = #slot_7)) or #slot_empty_7)",
+                            "target_property_name": "#7"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_property_name": "(((#slot_2 < #slot_8) or (#slot_2 = #slot_8)) or #slot_empty_8)",
+                            "target_property_name": "#8"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_property_name": "(#1 and #2 and #3 and #4 and #5 and #6 and #7 and #8)",
+                            "target_property_name": "#visible"
+                        }
+                    ]
+                }
+            },
+            {
+                "3@itemCountSlot": {
+                    "$crafting_slot_name": "crafting_input_3",
+                    "bindings": [
+                        {
+                            "binding_type": "view",
+                            "source_control_name": "crafting_input_0",
+                            "source_property_name": "#inputCount",
+                            "target_property_name": "#slot_0"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_control_name": "crafting_input_1",
+                            "source_property_name": "#inputCount",
+                            "target_property_name": "#slot_1"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_control_name": "crafting_input_2",
+                            "source_property_name": "#inputCount",
+                            "target_property_name": "#slot_2"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_control_name": "crafting_input_3",
+                            "source_property_name": "#inputCount",
+                            "target_property_name": "#slot_3"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_control_name": "crafting_input_4",
+                            "source_property_name": "#inputCount",
+                            "target_property_name": "#slot_4"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_control_name": "crafting_input_5",
+                            "source_property_name": "#inputCount",
+                            "target_property_name": "#slot_5"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_control_name": "crafting_input_6",
+                            "source_property_name": "#inputCount",
+                            "target_property_name": "#slot_6"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_control_name": "crafting_input_7",
+                            "source_property_name": "#inputCount",
+                            "target_property_name": "#slot_7"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_control_name": "crafting_input_8",
+                            "source_property_name": "#inputCount",
+                            "target_property_name": "#slot_8"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_control_name": "crafting_input_0",
+                            "source_property_name": "#isEmpty",
+                            "target_property_name": "#slot_empty_0"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_control_name": "crafting_input_1",
+                            "source_property_name": "#isEmpty",
+                            "target_property_name": "#slot_empty_1"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_control_name": "crafting_input_2",
+                            "source_property_name": "#isEmpty",
+                            "target_property_name": "#slot_empty_2"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_control_name": "crafting_input_3",
+                            "source_property_name": "#isEmpty",
+                            "target_property_name": "#slot_empty_3"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_control_name": "crafting_input_4",
+                            "source_property_name": "#isEmpty",
+                            "target_property_name": "#slot_empty_4"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_control_name": "crafting_input_5",
+                            "source_property_name": "#isEmpty",
+                            "target_property_name": "#slot_empty_5"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_control_name": "crafting_input_6",
+                            "source_property_name": "#isEmpty",
+                            "target_property_name": "#slot_empty_6"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_control_name": "crafting_input_7",
+                            "source_property_name": "#isEmpty",
+                            "target_property_name": "#slot_empty_7"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_control_name": "crafting_input_8",
+                            "source_property_name": "#isEmpty",
+                            "target_property_name": "#slot_empty_8"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_property_name": "(((#slot_3 < #slot_0) or (#slot_3 = #slot_0)) or #slot_empty_0)",
+                            "target_property_name": "#1"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_property_name": "(((#slot_3 < #slot_1) or (#slot_3 = #slot_1)) or #slot_empty_1)",
+                            "target_property_name": "#2"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_property_name": "(((#slot_3 < #slot_2) or (#slot_3 = #slot_2)) or #slot_empty_2)",
+                            "target_property_name": "#3"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_property_name": "(((#slot_3 < #slot_4) or (#slot_3 = #slot_4)) or #slot_empty_4)",
+                            "target_property_name": "#4"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_property_name": "(((#slot_3 < #slot_5) or (#slot_3 = #slot_5)) or #slot_empty_5)",
+                            "target_property_name": "#5"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_property_name": "(((#slot_3 < #slot_6) or (#slot_3 = #slot_6)) or #slot_empty_6)",
+                            "target_property_name": "#6"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_property_name": "(((#slot_3 < #slot_7) or (#slot_3 = #slot_7)) or #slot_empty_7)",
+                            "target_property_name": "#7"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_property_name": "(((#slot_3 < #slot_8) or (#slot_3 = #slot_8)) or #slot_empty_8)",
+                            "target_property_name": "#8"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_property_name": "(#1 and #2 and #3 and #4 and #5 and #6 and #7 and #8)",
+                            "target_property_name": "#visible"
+                        }
+                    ]
+                }
+            },
+            {
+                "4@itemCountSlot": {
+                    "$crafting_slot_name": "crafting_input_4",
+                    "bindings": [
+                        {
+                            "binding_type": "view",
+                            "source_control_name": "crafting_input_0",
+                            "source_property_name": "#inputCount",
+                            "target_property_name": "#slot_0"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_control_name": "crafting_input_1",
+                            "source_property_name": "#inputCount",
+                            "target_property_name": "#slot_1"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_control_name": "crafting_input_2",
+                            "source_property_name": "#inputCount",
+                            "target_property_name": "#slot_2"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_control_name": "crafting_input_3",
+                            "source_property_name": "#inputCount",
+                            "target_property_name": "#slot_3"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_control_name": "crafting_input_4",
+                            "source_property_name": "#inputCount",
+                            "target_property_name": "#slot_4"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_control_name": "crafting_input_5",
+                            "source_property_name": "#inputCount",
+                            "target_property_name": "#slot_5"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_control_name": "crafting_input_6",
+                            "source_property_name": "#inputCount",
+                            "target_property_name": "#slot_6"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_control_name": "crafting_input_7",
+                            "source_property_name": "#inputCount",
+                            "target_property_name": "#slot_7"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_control_name": "crafting_input_8",
+                            "source_property_name": "#inputCount",
+                            "target_property_name": "#slot_8"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_control_name": "crafting_input_0",
+                            "source_property_name": "#isEmpty",
+                            "target_property_name": "#slot_empty_0"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_control_name": "crafting_input_1",
+                            "source_property_name": "#isEmpty",
+                            "target_property_name": "#slot_empty_1"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_control_name": "crafting_input_2",
+                            "source_property_name": "#isEmpty",
+                            "target_property_name": "#slot_empty_2"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_control_name": "crafting_input_3",
+                            "source_property_name": "#isEmpty",
+                            "target_property_name": "#slot_empty_3"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_control_name": "crafting_input_4",
+                            "source_property_name": "#isEmpty",
+                            "target_property_name": "#slot_empty_4"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_control_name": "crafting_input_5",
+                            "source_property_name": "#isEmpty",
+                            "target_property_name": "#slot_empty_5"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_control_name": "crafting_input_6",
+                            "source_property_name": "#isEmpty",
+                            "target_property_name": "#slot_empty_6"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_control_name": "crafting_input_7",
+                            "source_property_name": "#isEmpty",
+                            "target_property_name": "#slot_empty_7"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_control_name": "crafting_input_8",
+                            "source_property_name": "#isEmpty",
+                            "target_property_name": "#slot_empty_8"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_property_name": "(((#slot_4 < #slot_0) or (#slot_4 = #slot_0)) or #slot_empty_0)",
+                            "target_property_name": "#1"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_property_name": "(((#slot_4 < #slot_1) or (#slot_4 = #slot_1)) or #slot_empty_1)",
+                            "target_property_name": "#2"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_property_name": "(((#slot_4 < #slot_2) or (#slot_4 = #slot_2)) or #slot_empty_2)",
+                            "target_property_name": "#3"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_property_name": "(((#slot_4 < #slot_3) or (#slot_4 = #slot_3)) or #slot_empty_3)",
+                            "target_property_name": "#4"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_property_name": "(((#slot_4 < #slot_5) or (#slot_4 = #slot_5)) or #slot_empty_5)",
+                            "target_property_name": "#5"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_property_name": "(((#slot_4 < #slot_6) or (#slot_4 = #slot_6)) or #slot_empty_6)",
+                            "target_property_name": "#6"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_property_name": "(((#slot_4 < #slot_7) or (#slot_4 = #slot_7)) or #slot_empty_7)",
+                            "target_property_name": "#7"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_property_name": "(((#slot_4 < #slot_8) or (#slot_4 = #slot_8)) or #slot_empty_8)",
+                            "target_property_name": "#8"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_property_name": "(#1 and #2 and #3 and #4 and #5 and #6 and #7 and #8)",
+                            "target_property_name": "#visible"
+                        }
+                    ]
+                }
+            },
+            {
+                "5@itemCountSlot": {
+                    "$crafting_slot_name": "crafting_input_5",
+                    "bindings": [
+                        {
+                            "binding_type": "view",
+                            "source_control_name": "crafting_input_0",
+                            "source_property_name": "#inputCount",
+                            "target_property_name": "#slot_0"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_control_name": "crafting_input_1",
+                            "source_property_name": "#inputCount",
+                            "target_property_name": "#slot_1"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_control_name": "crafting_input_2",
+                            "source_property_name": "#inputCount",
+                            "target_property_name": "#slot_2"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_control_name": "crafting_input_3",
+                            "source_property_name": "#inputCount",
+                            "target_property_name": "#slot_3"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_control_name": "crafting_input_4",
+                            "source_property_name": "#inputCount",
+                            "target_property_name": "#slot_4"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_control_name": "crafting_input_5",
+                            "source_property_name": "#inputCount",
+                            "target_property_name": "#slot_5"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_control_name": "crafting_input_6",
+                            "source_property_name": "#inputCount",
+                            "target_property_name": "#slot_6"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_control_name": "crafting_input_7",
+                            "source_property_name": "#inputCount",
+                            "target_property_name": "#slot_7"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_control_name": "crafting_input_8",
+                            "source_property_name": "#inputCount",
+                            "target_property_name": "#slot_8"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_control_name": "crafting_input_0",
+                            "source_property_name": "#isEmpty",
+                            "target_property_name": "#slot_empty_0"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_control_name": "crafting_input_1",
+                            "source_property_name": "#isEmpty",
+                            "target_property_name": "#slot_empty_1"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_control_name": "crafting_input_2",
+                            "source_property_name": "#isEmpty",
+                            "target_property_name": "#slot_empty_2"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_control_name": "crafting_input_3",
+                            "source_property_name": "#isEmpty",
+                            "target_property_name": "#slot_empty_3"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_control_name": "crafting_input_4",
+                            "source_property_name": "#isEmpty",
+                            "target_property_name": "#slot_empty_4"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_control_name": "crafting_input_5",
+                            "source_property_name": "#isEmpty",
+                            "target_property_name": "#slot_empty_5"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_control_name": "crafting_input_6",
+                            "source_property_name": "#isEmpty",
+                            "target_property_name": "#slot_empty_6"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_control_name": "crafting_input_7",
+                            "source_property_name": "#isEmpty",
+                            "target_property_name": "#slot_empty_7"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_control_name": "crafting_input_8",
+                            "source_property_name": "#isEmpty",
+                            "target_property_name": "#slot_empty_8"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_property_name": "(((#slot_5 < #slot_0) or (#slot_5 = #slot_0)) or #slot_empty_0)",
+                            "target_property_name": "#1"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_property_name": "(((#slot_5 < #slot_1) or (#slot_5 = #slot_1)) or #slot_empty_1)",
+                            "target_property_name": "#2"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_property_name": "(((#slot_5 < #slot_2) or (#slot_5 = #slot_2)) or #slot_empty_2)",
+                            "target_property_name": "#3"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_property_name": "(((#slot_5 < #slot_3) or (#slot_5 = #slot_3)) or #slot_empty_3)",
+                            "target_property_name": "#4"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_property_name": "(((#slot_5 < #slot_4) or (#slot_5 = #slot_4)) or #slot_empty_4)",
+                            "target_property_name": "#5"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_property_name": "(((#slot_5 < #slot_6) or (#slot_5 = #slot_6)) or #slot_empty_6)",
+                            "target_property_name": "#6"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_property_name": "(((#slot_5 < #slot_7) or (#slot_5 = #slot_7)) or #slot_empty_7)",
+                            "target_property_name": "#7"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_property_name": "(((#slot_5 < #slot_8) or (#slot_5 = #slot_8)) or #slot_empty_8)",
+                            "target_property_name": "#8"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_property_name": "(#1 and #2 and #3 and #4 and #5 and #6 and #7 and #8)",
+                            "target_property_name": "#visible"
+                        }
+                    ]
+                }
+            },
+            {
+                "6@itemCountSlot": {
+                    "$crafting_slot_name": "crafting_input_6",
+                    "bindings": [
+                        {
+                            "binding_type": "view",
+                            "source_control_name": "crafting_input_0",
+                            "source_property_name": "#inputCount",
+                            "target_property_name": "#slot_0"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_control_name": "crafting_input_1",
+                            "source_property_name": "#inputCount",
+                            "target_property_name": "#slot_1"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_control_name": "crafting_input_2",
+                            "source_property_name": "#inputCount",
+                            "target_property_name": "#slot_2"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_control_name": "crafting_input_3",
+                            "source_property_name": "#inputCount",
+                            "target_property_name": "#slot_3"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_control_name": "crafting_input_4",
+                            "source_property_name": "#inputCount",
+                            "target_property_name": "#slot_4"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_control_name": "crafting_input_5",
+                            "source_property_name": "#inputCount",
+                            "target_property_name": "#slot_5"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_control_name": "crafting_input_6",
+                            "source_property_name": "#inputCount",
+                            "target_property_name": "#slot_6"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_control_name": "crafting_input_7",
+                            "source_property_name": "#inputCount",
+                            "target_property_name": "#slot_7"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_control_name": "crafting_input_8",
+                            "source_property_name": "#inputCount",
+                            "target_property_name": "#slot_8"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_control_name": "crafting_input_0",
+                            "source_property_name": "#isEmpty",
+                            "target_property_name": "#slot_empty_0"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_control_name": "crafting_input_1",
+                            "source_property_name": "#isEmpty",
+                            "target_property_name": "#slot_empty_1"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_control_name": "crafting_input_2",
+                            "source_property_name": "#isEmpty",
+                            "target_property_name": "#slot_empty_2"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_control_name": "crafting_input_3",
+                            "source_property_name": "#isEmpty",
+                            "target_property_name": "#slot_empty_3"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_control_name": "crafting_input_4",
+                            "source_property_name": "#isEmpty",
+                            "target_property_name": "#slot_empty_4"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_control_name": "crafting_input_5",
+                            "source_property_name": "#isEmpty",
+                            "target_property_name": "#slot_empty_5"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_control_name": "crafting_input_6",
+                            "source_property_name": "#isEmpty",
+                            "target_property_name": "#slot_empty_6"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_control_name": "crafting_input_7",
+                            "source_property_name": "#isEmpty",
+                            "target_property_name": "#slot_empty_7"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_control_name": "crafting_input_8",
+                            "source_property_name": "#isEmpty",
+                            "target_property_name": "#slot_empty_8"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_property_name": "(((#slot_6 < #slot_0) or (#slot_6 = #slot_0)) or #slot_empty_0)",
+                            "target_property_name": "#1"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_property_name": "(((#slot_6 < #slot_1) or (#slot_6 = #slot_1)) or #slot_empty_1)",
+                            "target_property_name": "#2"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_property_name": "(((#slot_6 < #slot_2) or (#slot_6 = #slot_2)) or #slot_empty_2)",
+                            "target_property_name": "#3"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_property_name": "(((#slot_6 < #slot_3) or (#slot_6 = #slot_3)) or #slot_empty_3)",
+                            "target_property_name": "#4"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_property_name": "(((#slot_6 < #slot_4) or (#slot_6 = #slot_4)) or #slot_empty_4)",
+                            "target_property_name": "#5"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_property_name": "(((#slot_6 < #slot_5) or (#slot_6 = #slot_5)) or #slot_empty_5)",
+                            "target_property_name": "#6"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_property_name": "(((#slot_6 < #slot_7) or (#slot_6 = #slot_7)) or #slot_empty_7)",
+                            "target_property_name": "#7"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_property_name": "(((#slot_6 < #slot_8) or (#slot_6 = #slot_8)) or #slot_empty_8)",
+                            "target_property_name": "#8"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_property_name": "(#1 and #2 and #3 and #4 and #5 and #6 and #7 and #8)",
+                            "target_property_name": "#visible"
+                        }
+                    ]
+                }
+            },
+            {
+                "7@itemCountSlot": {
+                    "$crafting_slot_name": "crafting_input_7",
+                    "bindings": [
+                        {
+                            "binding_type": "view",
+                            "source_control_name": "crafting_input_0",
+                            "source_property_name": "#inputCount",
+                            "target_property_name": "#slot_0"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_control_name": "crafting_input_1",
+                            "source_property_name": "#inputCount",
+                            "target_property_name": "#slot_1"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_control_name": "crafting_input_2",
+                            "source_property_name": "#inputCount",
+                            "target_property_name": "#slot_2"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_control_name": "crafting_input_3",
+                            "source_property_name": "#inputCount",
+                            "target_property_name": "#slot_3"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_control_name": "crafting_input_4",
+                            "source_property_name": "#inputCount",
+                            "target_property_name": "#slot_4"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_control_name": "crafting_input_5",
+                            "source_property_name": "#inputCount",
+                            "target_property_name": "#slot_5"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_control_name": "crafting_input_6",
+                            "source_property_name": "#inputCount",
+                            "target_property_name": "#slot_6"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_control_name": "crafting_input_7",
+                            "source_property_name": "#inputCount",
+                            "target_property_name": "#slot_7"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_control_name": "crafting_input_8",
+                            "source_property_name": "#inputCount",
+                            "target_property_name": "#slot_8"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_control_name": "crafting_input_0",
+                            "source_property_name": "#isEmpty",
+                            "target_property_name": "#slot_empty_0"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_control_name": "crafting_input_1",
+                            "source_property_name": "#isEmpty",
+                            "target_property_name": "#slot_empty_1"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_control_name": "crafting_input_2",
+                            "source_property_name": "#isEmpty",
+                            "target_property_name": "#slot_empty_2"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_control_name": "crafting_input_3",
+                            "source_property_name": "#isEmpty",
+                            "target_property_name": "#slot_empty_3"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_control_name": "crafting_input_4",
+                            "source_property_name": "#isEmpty",
+                            "target_property_name": "#slot_empty_4"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_control_name": "crafting_input_5",
+                            "source_property_name": "#isEmpty",
+                            "target_property_name": "#slot_empty_5"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_control_name": "crafting_input_6",
+                            "source_property_name": "#isEmpty",
+                            "target_property_name": "#slot_empty_6"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_control_name": "crafting_input_7",
+                            "source_property_name": "#isEmpty",
+                            "target_property_name": "#slot_empty_7"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_control_name": "crafting_input_8",
+                            "source_property_name": "#isEmpty",
+                            "target_property_name": "#slot_empty_8"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_property_name": "(((#slot_7 < #slot_0) or (#slot_7 = #slot_0)) or #slot_empty_0)",
+                            "target_property_name": "#1"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_property_name": "(((#slot_7 < #slot_1) or (#slot_7 = #slot_1)) or #slot_empty_1)",
+                            "target_property_name": "#2"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_property_name": "(((#slot_7 < #slot_2) or (#slot_7 = #slot_2)) or #slot_empty_2)",
+                            "target_property_name": "#3"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_property_name": "(((#slot_7 < #slot_3) or (#slot_7 = #slot_3)) or #slot_empty_3)",
+                            "target_property_name": "#4"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_property_name": "(((#slot_7 < #slot_4) or (#slot_7 = #slot_4)) or #slot_empty_4)",
+                            "target_property_name": "#5"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_property_name": "(((#slot_7 < #slot_5) or (#slot_7 = #slot_5)) or #slot_empty_5)",
+                            "target_property_name": "#6"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_property_name": "(((#slot_7 < #slot_6) or (#slot_7 = #slot_6)) or #slot_empty_6)",
+                            "target_property_name": "#7"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_property_name": "(((#slot_7 < #slot_8) or (#slot_7 = #slot_8)) or #slot_empty_8)",
+                            "target_property_name": "#8"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_property_name": "(#1 and #2 and #3 and #4 and #5 and #6 and #7 and #8)",
+                            "target_property_name": "#visible"
+                        }
+                    ]
+                }
+            },
+            {
+                "8@itemCountSlot": {
+                    "$crafting_slot_name": "crafting_input_8",
+                    "bindings": [
+                        {
+                            "binding_type": "view",
+                            "source_control_name": "crafting_input_0",
+                            "source_property_name": "#inputCount",
+                            "target_property_name": "#slot_0"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_control_name": "crafting_input_1",
+                            "source_property_name": "#inputCount",
+                            "target_property_name": "#slot_1"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_control_name": "crafting_input_2",
+                            "source_property_name": "#inputCount",
+                            "target_property_name": "#slot_2"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_control_name": "crafting_input_3",
+                            "source_property_name": "#inputCount",
+                            "target_property_name": "#slot_3"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_control_name": "crafting_input_4",
+                            "source_property_name": "#inputCount",
+                            "target_property_name": "#slot_4"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_control_name": "crafting_input_5",
+                            "source_property_name": "#inputCount",
+                            "target_property_name": "#slot_5"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_control_name": "crafting_input_6",
+                            "source_property_name": "#inputCount",
+                            "target_property_name": "#slot_6"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_control_name": "crafting_input_7",
+                            "source_property_name": "#inputCount",
+                            "target_property_name": "#slot_7"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_control_name": "crafting_input_8",
+                            "source_property_name": "#inputCount",
+                            "target_property_name": "#slot_8"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_control_name": "crafting_input_0",
+                            "source_property_name": "#isEmpty",
+                            "target_property_name": "#slot_empty_0"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_control_name": "crafting_input_1",
+                            "source_property_name": "#isEmpty",
+                            "target_property_name": "#slot_empty_1"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_control_name": "crafting_input_2",
+                            "source_property_name": "#isEmpty",
+                            "target_property_name": "#slot_empty_2"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_control_name": "crafting_input_3",
+                            "source_property_name": "#isEmpty",
+                            "target_property_name": "#slot_empty_3"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_control_name": "crafting_input_4",
+                            "source_property_name": "#isEmpty",
+                            "target_property_name": "#slot_empty_4"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_control_name": "crafting_input_5",
+                            "source_property_name": "#isEmpty",
+                            "target_property_name": "#slot_empty_5"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_control_name": "crafting_input_6",
+                            "source_property_name": "#isEmpty",
+                            "target_property_name": "#slot_empty_6"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_control_name": "crafting_input_7",
+                            "source_property_name": "#isEmpty",
+                            "target_property_name": "#slot_empty_7"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_control_name": "crafting_input_8",
+                            "source_property_name": "#isEmpty",
+                            "target_property_name": "#slot_empty_8"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_property_name": "(((#slot_8 < #slot_0) or (#slot_8 = #slot_0)) or #slot_empty_0)",
+                            "target_property_name": "#1"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_property_name": "(((#slot_8 < #slot_1) or (#slot_8 = #slot_1)) or #slot_empty_1)",
+                            "target_property_name": "#2"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_property_name": "(((#slot_8 < #slot_2) or (#slot_8 = #slot_2)) or #slot_empty_2)",
+                            "target_property_name": "#3"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_property_name": "(((#slot_8 < #slot_3) or (#slot_8 = #slot_3)) or #slot_empty_3)",
+                            "target_property_name": "#4"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_property_name": "(((#slot_8 < #slot_4) or (#slot_8 = #slot_4)) or #slot_empty_4)",
+                            "target_property_name": "#5"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_property_name": "(((#slot_8 < #slot_5) or (#slot_8 = #slot_5)) or #slot_empty_5)",
+                            "target_property_name": "#6"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_property_name": "(((#slot_8 < #slot_6) or (#slot_8 = #slot_6)) or #slot_empty_6)",
+                            "target_property_name": "#7"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_property_name": "(((#slot_8 < #slot_7) or (#slot_8 = #slot_7)) or #slot_empty_7)",
+                            "target_property_name": "#8"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_property_name": "(#1 and #2 and #3 and #4 and #5 and #6 and #7 and #8)",
+                            "target_property_name": "#visible"
+                        }
+                    ]
+                }
+            }
+        ]
+    },
+    "outputCount": {
+        "type": "stack_panel",
+        "size": [
+            "100%cm",
+            "100%cm"
+        ],
+        "anchor_from": "top_left",
+        "anchor_to": "top_left",
+        "collection_name": "crafting_output_items",
+        "controls": [
+            {
+                "item_output_count@asaLabel": {
+                    "collection_index": 0,
+                    "bindings": [
+                        {
+                            "binding_name": "#inventory_stack_count",
+                            "binding_type": "collection",
+                            "binding_collection_name": "crafting_output_items",
+                            "binding_condition": "none"
+                        },
+                        {
+                            "binding_name": "#item_id_aux",
+                            "binding_type": "collection",
+                            "binding_collection_name": "crafting_output_items",
+                            "binding_condition": "none"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_property_name": "((#inventory_stack_count * 1) + 1 - 1)",
+                            "target_property_name": "#itemStackCount"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_property_name": "(#item_id_aux = -1)",
+                            "target_property_name": "#isEmpty"
+                        }
+                    ]
+                }
+            }
+        ]
+    },
+    "item_input": {
+        "type": "panel",
+        "size": [
+            "100%cm",
+            "100%cm"
+        ],
+        "$input_slot|default": "crafting_input_0",
+        "$input_slot_one|default": "crafting_input_one_0",
+        "controls": [
+            {
+                "$input_slot@asaLabel": {
+                    "bindings": [
+                        {
+                            "binding_name": "#inventory_stack_count",
+                            "binding_type": "collection",
+                            "binding_collection_name": "crafting_input_items",
+                            "binding_condition": "none"
+                        },
+                        {
+                            "binding_name": "#item_id_aux",
+                            "binding_type": "collection",
+                            "binding_collection_name": "crafting_input_items",
+                            "binding_condition": "none"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_control_name": "item_output_count",
+                            "source_property_name": "(#itemStackCount - §z)",
+                            "target_property_name": "#itemCount"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_property_name": "(((#inventory_stack_count * 1) + 1 - 1) * #itemCount)",
+                            "target_property_name": "#itemStackCount"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_property_name": "((#inventory_stack_count * 1) + 1 - 1)",
+                            "target_property_name": "#inputCount"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_property_name": "(#item_id_aux = -1)",
+                            "target_property_name": "#isEmpty"
+                        }
+                    ]
+                }
+            }
+        ]
+    },
+    "inputCount": {
+        "type": "stack_panel",
+        "size": [
+            "100%cm",
+            "100%c"
+        ],
+        "anchor_from": "bottom_left",
+        "anchor_to": "bottom_left",
+        "collection_name": "crafting_input_items",
+        "controls": [
+            {
+                "0@item_input": {
+                    "collection_index": 0,
+                    "$input_slot": "crafting_input_0"
+                }
+            },
+            {
+                "1@item_input": {
+                    "collection_index": 1,
+                    "$input_slot": "crafting_input_1"
+                }
+            },
+            {
+                "2@item_input": {
+                    "collection_index": 2,
+                    "$input_slot": "crafting_input_2"
+                }
+            },
+            {
+                "3@item_input": {
+                    "collection_index": 3,
+                    "$input_slot": "crafting_input_3"
+                }
+            },
+            {
+                "4@item_input": {
+                    "collection_index": 4,
+                    "$input_slot": "crafting_input_4"
+                }
+            },
+            {
+                "5@item_input": {
+                    "collection_index": 5,
+                    "$input_slot": "crafting_input_5"
+                }
+            },
+            {
+                "6@item_input": {
+                    "collection_index": 6,
+                    "$input_slot": "crafting_input_6"
+                }
+            },
+            {
+                "7@item_input": {
+                    "collection_index": 7,
+                    "$input_slot": "crafting_input_7"
+                }
+            },
+            {
+                "8@item_input": {
+                    "collection_index": 8,
+                    "$input_slot": "crafting_input_8"
+                }
+            }
+        ]
+    },
+    "itemCountSlot": {
+        "type": "panel",
+        "size": [
+            "100%cm",
+            "100%cm"
+        ],
+        "$crafting_slot_name|default": "crafting_input_0",
+        "controls": [
+            {
+                "itemCountSlot": {
+                    "type": "panel",
+                    "size": [
+                        "100%cm",
+                        "100%cm"
+                    ],
+                    "bindings": [
+                        {
+                            "binding_type": "view",
+                            "source_control_name": "$crafting_slot_name",
+                            "source_property_name": "#isEmpty",
+                            "target_property_name": "#1"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_control_name": "item_output_count",
+                            "source_property_name": "#isEmpty",
+                            "target_property_name": "#2"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_property_name": "(not (#1 or #2))",
+                            "target_property_name": "#visible"
+                        }
+                    ],
+                    "controls": [
+                        {
+                            "count_full@asaLabel": {
+                                "text": "#asaCount",
+                                "bindings": [
+                                    {
+                                        "binding_type": "view",
+                                        "source_control_name": "$crafting_slot_name",
+                                        "source_property_name": "(§z + #itemStackCount)",
+                                        "target_property_name": "#asaCount"
+                                    },
+                                    {
+                                        "binding_type": "view",
+                                        "source_control_name": "$crafting_slot_name",
+                                        "source_property_name": "(not #itemStackCount = 0)",
+                                        "target_property_name": "#visible"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "count_one@asaLabel": {
+                                "text": "1",
+                                "bindings": [
+                                    {
+                                        "binding_type": "view",
+                                        "source_control_name": "$crafting_slot_name",
+                                        "source_property_name": "(#inputCount = 0)",
+                                        "target_property_name": "#1"
+                                    },
+                                    {
+                                        "binding_type": "view",
+                                        "source_control_name": "item_output_count",
+                                        "source_property_name": "(#itemStackCount = 0)",
+                                        "target_property_name": "#2"
+                                    },
+                                    {
+                                        "binding_type": "view",
+                                        "source_property_name": "(#1 and #2)",
+                                        "target_property_name": "#visible"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "isSlotInputNot0@asaLabel": {
+                                "text": "#asaCount",
+                                "bindings": [
+                                    {
+                                        "binding_type": "view",
+                                        "source_control_name": "$crafting_slot_name",
+                                        "source_property_name": "(§z + #inputCount)",
+                                        "target_property_name": "#asaCount"
+                                    },
+                                    {
+                                        "binding_type": "view",
+                                        "source_control_name": "$crafting_slot_name",
+                                        "source_property_name": "(not #inputCount = 0)",
+                                        "target_property_name": "#1"
+                                    },
+                                    {
+                                        "binding_type": "view",
+                                        "source_control_name": "item_output_count",
+                                        "source_property_name": "(#itemStackCount = 0)",
+                                        "target_property_name": "#2"
+                                    },
+                                    {
+                                        "binding_type": "view",
+                                        "source_property_name": "(#1 and #2)",
+                                        "target_property_name": "#visible"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "isSlotOutputNot0@asaLabel": {
+                                "text": "#asaCount",
+                                "bindings": [
+                                    {
+                                        "binding_type": "view",
+                                        "source_control_name": "item_output_count",
+                                        "source_property_name": "(§z + #itemStackCount)",
+                                        "target_property_name": "#asaCount"
+                                    },
+                                    {
+                                        "binding_type": "view",
+                                        "source_control_name": "$crafting_slot_name",
+                                        "source_property_name": "(#inputCount = 0)",
+                                        "target_property_name": "#1"
+                                    },
+                                    {
+                                        "binding_type": "view",
+                                        "source_control_name": "item_output_count",
+                                        "source_property_name": "(not #itemStackCount = 0)",
+                                        "target_property_name": "#2"
+                                    },
+                                    {
+                                        "binding_type": "view",
+                                        "source_property_name": "(#1 and #2)",
+                                        "target_property_name": "#visible"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            }
+        ]
+    }
+}
