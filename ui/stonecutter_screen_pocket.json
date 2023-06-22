@@ -1,0 +1,90 @@
+{
+    "stonecutter_content_stack_panel/panel": {
+        "modifications": [
+            {
+                "array_name": "controls",
+                "operation": "insert_front",
+                "value": [
+                    {
+                        "stonecutter_input_slot": {
+                            "size": [
+                                0,
+                                0
+                            ],
+                            "type": "panel",
+                            "bindings": [
+                                {
+                                    "binding_name": "#item_id_aux",
+                                    "binding_type": "collection",
+                                    "binding_collection_name": "stonecutter_input_items"
+                                },
+                                {
+                                    "binding_name": "#inventory_stack_count",
+                                    "binding_type": "collection",
+                                    "binding_collection_name": "stonecutter_input_items"
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "stonecutter_output_slot": {
+                            "size": [
+                                0,
+                                0
+                            ],
+                            "type": "panel",
+                            "bindings": [
+                                {
+                                    "binding_name": "#item_id_aux",
+                                    "binding_type": "collection",
+                                    "binding_collection_name": "stonecutter_result_items"
+                                },
+                                {
+                                    "binding_name": "#inventory_stack_count",
+                                    "binding_type": "collection",
+                                    "binding_collection_name": "stonecutter_result_items"
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "total_item_can_be_crafting": {
+                            "type": "label",
+                            "text": "#text",
+                            "color": "$title_text_color",
+                            "offset": [
+                                0,
+                                54
+                            ],
+                            "layer": 100,
+                            "bindings": [
+                                {
+                                    "binding_type": "view",
+                                    "source_control_name": "stonecutter_input_slot",
+                                    "source_property_name": "( (not (#inventory_stack_count * 1 > 1) * (not (#item_id_aux = -1) + 0)) + #inventory_stack_count * 1 )",
+                                    "target_property_name": "#input"
+                                },
+                                {
+                                    "binding_type": "view",
+                                    "source_control_name": "stonecutter_output_slot",
+                                    "source_property_name": "( (not (#inventory_stack_count * 1 > 1) * (not (#item_id_aux = -1) + 0)) + #inventory_stack_count * 1 )",
+                                    "target_property_name": "#output"
+                                },
+                                {
+                                    "binding_type": "view",
+                                    "source_property_name": "(not (#input * #output) = 0)",
+                                    "target_property_name": "#visible"
+                                },
+                                {
+                                    "binding_type": "view",
+                                    "source_property_name": "('x' + #input * #output)",
+                                    "target_property_name": "#text"
+                                }
+                            ]
+                        }
+                    }
+                ]
+            }
+        ]
+    }
+}

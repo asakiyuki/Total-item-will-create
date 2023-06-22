@@ -1,0 +1,62 @@
+{
+    "recipe_inventory_screen_content_pocket": {
+        "modifications": [
+            {
+                "array_name": "controls",
+                "operation": "insert_front",
+                "value": [
+                    {
+                        "crafting_input@crafting.crafting_input": {}
+                    },
+                    {
+                        "crafting_output_slot_0@crafting.inventory_item_amount": {
+                            "$collection_name": "crafting_output_items"
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    "survival_panel_pocket": {
+        "modifications": [
+            {
+                "array_name": "controls",
+                "operation": "insert_front",
+                "value": [
+                    {
+                        "total_count@crafting.total_item_can_be_crafting": {
+                            "offset": [
+                                0,
+                                -46
+                            ],
+                            "anchor_from": "bottom_middle",
+                            "anchor_to": "bottom_middle",
+                            "layer": 12
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    "survival_panel_crafting_pocket": {
+        "modifications": [
+            {
+                "array_name": "controls",
+                "operation": "insert_front",
+                "value": [
+                    {
+                        "total_count@crafting.total_item_can_be_crafting": {
+                            "offset": [
+                                0,
+                                -35
+                            ],
+                            "anchor_from": "bottom_middle",
+                            "anchor_to": "bottom_middle",
+                            "layer": 12
+                        }
+                    }
+                ]
+            }
+        ]
+    }
+}
